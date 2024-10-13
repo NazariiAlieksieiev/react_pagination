@@ -11,7 +11,8 @@ export const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const totalNumber: number = items.length;
   const start: number = currentPage * perPage - perPage;
-  const end: number = currentPage * perPage > 42 ? 42 : currentPage * perPage;
+  const end: number =
+    currentPage * perPage > totalNumber ? totalNumber : currentPage * perPage;
   const visibleItems: string[] = items.slice(start, end);
 
   const handlePerPageItems = (e: React.ChangeEvent<HTMLSelectElement>) => {
